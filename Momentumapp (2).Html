@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Momentum App</title>
+  <link rel="stylesheet" href="momentum.css" />
+</head>
+<body>
+  <div class="background-wrapper">
+    <div id="bg1" class="background-image"></div>
+    <div id="bg2" class="background-image"></div>
+  </div>
+
+  <div class="overlay">
+    <div class="main-content">
+      <h1 id="greeting">Hello!</h1>
+      <h2 id="time"></h2>
+
+      <button class="mini-button" onclick="toggleBox('nameBox')">Set Name</button>
+      <div id="nameBox" class="toggle-box">
+        <input type="text" id="nameInput" placeholder="Enter your name" />
+        <button onclick="saveName()">Save</button>
+      </div>
+
+      <button class="mini-button" onclick="toggleBox('focusBox')">Set Focus</button>
+      <div id="focusBox" class="toggle-box">
+        <input type="text" id="focusInput" placeholder="Today's focus" />
+        <button onclick="saveFocus()">Save</button>
+      </div>
+
+      <div id="focusDisplay"></div>
+    </div>
+
+    <div class="quote-section">
+      <p id="quoteDisplay"></p>
+      <input type="text" id="newQuote" placeholder="Add a new quote" />
+      <button onclick="addQuote()">Add Quote</button>
+    </div>
+
+    <button id="toggleGawain" onclick="toggleTodoPane()">Gawain</button>
+
+    <div class="gawain-pane" id="gawain">
+      <h3>To do List</h3>
+      <input type="text" id="todoInput" placeholder="Add a task" />
+      <button onclick="addTodo()">Add</button>
+      <ul id="todoList"></ul>
+    </div>
+  </div>
+
+  <script src="momentum.js"></script>
+</body>
+</html>

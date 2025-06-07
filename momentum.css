@@ -1,0 +1,256 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  /* background-color: #111; */
+  /* background-image: linear-gradient(to bottom, #000, #333); */
+}
+
+.background-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* pointer-events: none; */
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+
+  /* filter: blur(2px); */
+}
+
+.background-image.active {
+  opacity: 1;
+  /* z-index: 0; */
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+
+  /* backdrop-filter: blur(5px); */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+
+  /* gap: 20px; */
+}
+
+#greeting {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+
+  /* text-shadow: 1px 1px 2px black; */
+}
+
+#time {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+
+  /* font-weight: bold; */
+}
+
+.mini-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+
+  /* transition: background-color 0.3s; */
+  /* background-image: linear-gradient(to right, #444, #222); */
+}
+
+.toggle-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  display: none;
+
+  /* border: 1px solid #fff; */
+}
+
+#focusDisplay {
+  font-size: 1.4rem;
+  margin-top: 15px;
+
+  /* color: #ffcc00; */
+}
+
+.quote-section {
+  text-align: center;
+  margin-bottom: 50px;
+
+  /* max-width: 600px; */
+}
+
+.quote-section p {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+
+  /* line-height: 1.6; */
+}
+
+.quote-section input {
+  padding: 6px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 40%;
+  font-size: 0.9rem;
+
+  /* border-radius: 4px; */
+}
+
+.quote-section button {
+  padding: 8px;
+  margin-left: 10px;
+  margin-top: 10px;
+
+  /* background-color: rgba(255, 255, 255, 0.3); */
+}
+
+.gawain-pane {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  max-height: 300px;
+  display: none;
+
+  /* overflow-y: auto; */
+}
+
+.gawain-pane.active {
+  display: block;
+}
+
+.gawain-pane h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+
+  /* color: #ccc; */
+}
+
+.gawain-pane input {
+  width: calc(100% - 22px);
+  padding: 5px;
+  font-size: 1rem;
+
+  /* border: none; */
+}
+
+.gawain-pane button {
+  margin-top: 5px;
+  padding: 5px;
+  width: 100%;
+
+  /* background-color: #333; */
+}
+
+.gawain-pane ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+
+  /* max-height: 200px; */
+}
+
+.gawain-pane li {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+
+  /* border-bottom: 1px solid #555; */
+}
+
+.gawain-pane li span {
+  flex: 1;
+  margin-right: 5px;
+  text-align: left;
+
+  /* word-break: break-word; */
+}
+
+.gawain-pane li button {
+  font-size: 0.8rem;
+  margin-left: 2px;
+
+  /* background-color: red; */
+}
+
+#toggleGawain {
+  position: absolute;
+  bottom: 20px;
+  right: 340px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+   /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  */
+}
+
+@media (max-width: 600px) {
+  #greeting {
+    font-size: 2.5rem;
+    /* text-align: center; */
+  }
+
+  #time {
+    font-size: 3rem;
+  }
+
+  .quote-section input {
+    width: 60%;
+  }
+
+  .gawain-pane {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+
+    /* bottom: 10px; */
+  }
+}
